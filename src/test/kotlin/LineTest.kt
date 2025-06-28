@@ -14,8 +14,8 @@ class LineTest {
         val p2 = Point(5.0, 10.0)
         val line = Line(p1, p2)
 
-        assertSame(p1, line.a, "Start point 'a' should be the same instance as provided")
-        assertSame(p2, line.b, "End point 'b' should be the same instance as provided")
+        assertSame(p1, line.p1, "Start point 'a' should be the same instance as provided")
+        assertSame(p2, line.p2, "End point 'b' should be the same instance as provided")
     }
 
     @Test
@@ -108,10 +108,10 @@ class LineTest {
         assertEquals(5.0, p2.y, "Moved p2.y should be 5.0")
 
         // Verify line's internal points 'a' and 'b' reflect the changes
-        assertEquals(1.0, line.a.x, "Line's a.x should be 1.0")
-        assertEquals(1.0, line.a.y, "Line's a.y should be 1.0")
-        assertEquals(4.0, line.b.x, "Line's b.x should be 4.0")
-        assertEquals(5.0, line.b.y, "Line's b.y should be 5.0")
+        assertEquals(1.0, line.p1.x, "Line's a.x should be 1.0")
+        assertEquals(1.0, line.p1.y, "Line's a.y should be 1.0")
+        assertEquals(4.0, line.p2.x, "Line's b.x should be 4.0")
+        assertEquals(5.0, line.p2.y, "Line's b.y should be 5.0")
     }
 
     @Test
@@ -161,9 +161,9 @@ class LineTest {
         // The most important thing is that the compiler enforces this.
         // This test serves as a documentation of the intended private setter behavior.
         // We'll assert that the values are still the initial ones if no move happens.
-        assertEquals(0.0, line.a.x)
-        assertEquals(0.0, line.a.y)
-        assertEquals(1.0, line.b.x)
-        assertEquals(1.0, line.b.y)
+        assertEquals(0.0, line.p1.x)
+        assertEquals(0.0, line.p1.y)
+        assertEquals(1.0, line.p2.x)
+        assertEquals(1.0, line.p2.y)
     }
 }
