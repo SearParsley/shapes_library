@@ -1,3 +1,3 @@
 abstract class Solid : Shape() {
-    abstract fun getArea() : Double
+    abstract fun getArea(): Double
 }
