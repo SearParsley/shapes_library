@@ -10,8 +10,8 @@ class Point(x: Double, y: Double) : Shape() {
     }
 
     override fun move(deltaX: Double, deltaY: Double) {
-        this.x += deltaX
-        this.y += deltaY
+        x += deltaX
+        y += deltaY
     }
 
     override fun equals(other: Any?): Boolean {

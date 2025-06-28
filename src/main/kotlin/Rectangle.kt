@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 open class Rectangle(p1: Point, p2: Point) : Solid() {
     var p1: Point = p1
         private set
@@ -16,7 +18,7 @@ open class Rectangle(p1: Point, p2: Point) : Solid() {
     }
 
     override fun getArea(): Double {
-        return kotlin.math.abs((p1.x - p2.x) * (p1.y - p2.y))
+        return abs((p1.x - p2.x) * (p1.y - p2.y))
     }
 
 }
