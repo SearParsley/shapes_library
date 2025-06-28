@@ -1,28 +1,28 @@
-class Line(a: Point, b: Point) : Shape() {
-    var a: Point = a
+class Line(p1: Point, p2: Point) : Shape() {
+    var p1: Point = p1
         private set
 
-    var b: Point = b
+    var p2: Point = p2
         private set
 
     init {
-        require(a != b) { "A line cannot be formed by identical points (a and b must be distinct)." }
+        require(p1 != p2) { "A line cannot be formed by identical points (a and b must be distinct)." }
     }
 
     fun getSlope(): Double {
-        if (a.x == b.x) return Double.POSITIVE_INFINITY
-        return (b.y - a.y) / (b.x - a.x)
+        if (this@Line.p1.x == p2.x) return Double.POSITIVE_INFINITY
+        return (p2.y - this@Line.p1.y) / (p2.x - this@Line.p1.x)
     }
 
     fun getLength(): Double {
-        val deltaX = b.x - a.x
-        val deltaY = b.y - a.y
+        val deltaX = p2.x - this@Line.p1.x
+        val deltaY = p2.y - this@Line.p1.y
         return kotlin.math.sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
     override fun move(deltaX: Double, deltaY: Double) {
-        this.a.move(deltaX, deltaY)
-        this.b.move(deltaX, deltaY)
+        this.p1.move(deltaX, deltaY)
+        this.p2.move(deltaX, deltaY)
     }
 
 }
