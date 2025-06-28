@@ -10,13 +10,13 @@ class Line(p1: Point, p2: Point) : Shape() {
     }
 
     fun getSlope(): Double {
-        if (this@Line.p1.x == p2.x) return Double.POSITIVE_INFINITY
-        return (p2.y - this@Line.p1.y) / (p2.x - this@Line.p1.x)
+        if (p1.x == p2.x) return Double.POSITIVE_INFINITY
+        return (p2.y - p1.y) / (p2.x - p1.x)
     }
 
     fun getLength(): Double {
-        val deltaX = p2.x - this@Line.p1.x
-        val deltaY = p2.y - this@Line.p1.y
+        val deltaX = p2.x - p1.x
+        val deltaY = p2.y - p1.y
         return kotlin.math.sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
