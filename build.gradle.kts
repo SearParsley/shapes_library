@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0") // Or the latest stable version
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0") // Or the latest stable version
 }
 
 tasks.test {
