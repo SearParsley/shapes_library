@@ -1,4 +1,1 @@
-class Circle {
-    // TODO: Implement Circle class
-
-}
+class Circle(center: Point, radius: Double) : Ellipse(center, radius, radius)

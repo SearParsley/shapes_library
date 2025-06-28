@@ -2,7 +2,7 @@ import kotlin.math.PI
 
 private const val EPSILON = 1e-9
 
-class Ellipse(center: Point, radiusX: Double, radiusY: Double) : Solid() {
+open class Ellipse(center: Point, radiusX: Double, radiusY: Double) : Solid() {
     var center: Point = center
         private set
 
