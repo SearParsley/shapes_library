@@ -1,6 +1,4 @@
 class Point(x: Double, y: Double) {
-    // TODO: Implement Point class
-
     var x: Double = x
         private set
 
@@ -11,9 +9,27 @@ class Point(x: Double, y: Double) {
         return Point(x, y)
     }
 
-    // make an override when Shape class is implemented
+    // TODO: make an override when Shape class is implemented
     fun move(deltaX: Double, deltaY: Double) {
         this.x += deltaX
         this.y += deltaY
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Point
+
+        if (x != other.x) return false
+        if (y != other.y) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = x.hashCode()
+        result = 31 * result + y.hashCode()
+        return result
     }
 }
