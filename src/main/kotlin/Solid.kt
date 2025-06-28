@@ -1,4 +1,3 @@
-class Solid {
-    // TODO: Implement Solid class
-
+abstract class Solid : Shape() {
+    abstract fun getArea(): Double
 }
