@@ -1,4 +1,3 @@
-class Shape() {
-    // TODO: Implement Shape class
-
+abstract class Shape() {
+    abstract fun move(deltaX: Double, deltaY: Double)
 }

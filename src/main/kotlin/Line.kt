@@ -1,4 +1,4 @@
-class Line(a: Point, b: Point) {
+class Line(a: Point, b: Point) : Shape() {
     var a: Point = a
         private set
 
@@ -20,8 +20,7 @@ class Line(a: Point, b: Point) {
         return kotlin.math.sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
-    // TODO: make an override when Shape class is implemented
-    fun move(deltaX: Double, deltaY: Double) {
+    override fun move(deltaX: Double, deltaY: Double) {
         this.a.move(deltaX, deltaY)
         this.b.move(deltaX, deltaY)
     }

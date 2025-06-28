@@ -1,4 +1,4 @@
-class Point(x: Double, y: Double) {
+class Point(x: Double, y: Double) : Shape() {
     var x: Double = x
         private set
 
@@ -9,8 +9,7 @@ class Point(x: Double, y: Double) {
         return Point(x, y)
     }
 
-    // TODO: make an override when Shape class is implemented
-    fun move(deltaX: Double, deltaY: Double) {
+    override fun move(deltaX: Double, deltaY: Double) {
         this.x += deltaX
         this.y += deltaY
     }
