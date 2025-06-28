@@ -1,3 +1,5 @@
+import kotlin.math.sqrt
+
 class Line(p1: Point, p2: Point) : Shape() {
     var p1: Point = p1
         private set
@@ -17,12 +19,12 @@ class Line(p1: Point, p2: Point) : Shape() {
     fun getLength(): Double {
         val deltaX = p2.x - p1.x
         val deltaY = p2.y - p1.y
-        return kotlin.math.sqrt(deltaX * deltaX + deltaY * deltaY)
+        return sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
     override fun move(deltaX: Double, deltaY: Double) {
-        this.p1.move(deltaX, deltaY)
-        this.p2.move(deltaX, deltaY)
+        p1.move(deltaX, deltaY)
+        p2.move(deltaX, deltaY)
     }
 
 }
