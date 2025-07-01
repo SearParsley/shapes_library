@@ -1,1 +1,1 @@
-![image info](img/shapes_library_uml.png)
+![UML diagram](img/shapes_library_uml.png)
